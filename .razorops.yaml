@@ -1,6 +1,6 @@
 tasks:
   build-deps:
-    runner: node:10
+    runner: cypress/base:8
     steps:
     - checkout
     - git clone https://github.com/contentful/the-example-app-e2e-tests.git ./test/e2e

@@ -3,4 +3,5 @@ tasks:
     runner: node:10
     steps:
     - checkout
+    - run: npm install
     - run: npm test

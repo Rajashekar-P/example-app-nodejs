@@ -40,6 +40,7 @@ module.exports.getCourses = async (request, response, next) => {
     categories,
     courses
   })
+  return this.courses
 }
 
 /**

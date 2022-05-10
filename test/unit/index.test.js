@@ -53,7 +53,7 @@ afterEach(() => {
 describe('Courses', () => {
   test('it should courses list once', async () => {
     await getCourses(request, response)
-    expect(response.render.mock.calls[0][0]).toBe('courses')
+    expect(response.render.mock.calls[0][0]).toBe('course')
     expect(response.render.mock.calls[0][1].title).toBe('All courses (1)')
     expect(response.render.mock.calls[0][1].courses.length).toBe(1)
     expect(response.render.mock.calls.length).toBe(1)

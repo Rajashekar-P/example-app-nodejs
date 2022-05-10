@@ -1,0 +1,6 @@
+tasks:
+  build-deps:
+    runner: node:10
+    steps:
+    - checkout
+    - run: npm test

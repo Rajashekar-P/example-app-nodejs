@@ -3,5 +3,7 @@ tasks:
     runner: node:10
     steps:
     - checkout
+    - git clone https://github.com/contentful/the-example-app-e2e-tests.git ./test/e2e
+    - cd ./test/e2e && npm install
     - run: npm install
-    - run: npm test
+    - run: npm run test

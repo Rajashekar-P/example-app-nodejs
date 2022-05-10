@@ -3,6 +3,10 @@ tasks:
     runner: cypress/base:8
     steps:
     - checkout
+    - cache/pull:
+        key: dependency-cache-{{ checksum "package.json" }}
+        paths:
+        - ./node_modules
     - git clone https://github.com/contentful/the-example-app-e2e-tests.git ./test/e2e
     - cd ./test/e2e && npm install
     - run: npm install

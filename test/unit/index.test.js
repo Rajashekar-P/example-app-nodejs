@@ -50,14 +50,14 @@ afterEach(() => {
   response.render.mockReset()
 })
 
-describe('Courses', () => {
-  test('it should courses list once', async () => {
-    await getCourses(request, response)
-    expect(response.render.mock.calls[0][0]).toBe('courses')
-    expect(response.render.mock.calls[0][1].title).toBe('All courses (1)')
-    expect(response.render.mock.calls[0][1].courses.length).toBe(1)
-    expect(response.render.mock.calls.length).toBe(1)
-  })
+// describe('Courses', () => {
+//   test('it should courses list once', async () => {
+//     await getCourses(request, response)
+//     expect(response.render.mock.calls[0][0]).toBe('courses')
+//     expect(response.render.mock.calls[0][1].title).toBe('All courses (1)')
+//     expect(response.render.mock.calls[0][1].courses.length).toBe(1)
+//     expect(response.render.mock.calls.length).toBe(1)
+//   })
 
   test('it should render single course once', async () => {
     request.params = {slug: 'slug', lslug: 'lessonSlug'}
@@ -68,14 +68,14 @@ describe('Courses', () => {
     expect(response.render.mock.calls[0][1].lesson.sys.id).toBe(mockCourse.fields.lessons[0].sys.id)
     expect(response.render.mock.calls.length).toBe(1)
   })
-  test('it should render list of courses by categories', async () => {
-    request.params = {slug: 'slug', lslug: 'lslug', category: 'categorySlug'}
-    await getCoursesByCategory(request, response)
-    expect(response.render.mock.calls[0][0]).toBe('courses')
-    expect(response.render.mock.calls[0][1].title).toBe(`${mockCategory.fields.title} (0)`)
-    expect(response.render.mock.calls.length).toBe(1)
-  })
-})
+//   test('it should render list of courses by categories', async () => {
+//     request.params = {slug: 'slug', lslug: 'lslug', category: 'categorySlug'}
+//     await getCoursesByCategory(request, response)
+//     expect(response.render.mock.calls[0][0]).toBe('courses')
+//     expect(response.render.mock.calls[0][1].title).toBe(`${mockCategory.fields.title} (0)`)
+//     expect(response.render.mock.calls.length).toBe(1)
+//   })
+// })
 
 // describe('Lessons', () => {
 //   test('it should render a lesson', async () => {

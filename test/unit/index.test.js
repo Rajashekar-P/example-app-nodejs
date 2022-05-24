@@ -59,15 +59,15 @@ afterEach(() => {
 //     expect(response.render.mock.calls.length).toBe(1)
 //   })
 
-  test('it should render single course once', async () => {
-    request.params = {slug: 'slug', lslug: 'lessonSlug'}
-    await getCourse(request, response)
-    expect(response.render.mock.calls[0][0]).toBe('course')
-    expect(response.render.mock.calls[0][1].title).toBe(mockCourse.fields.title)
-    expect(response.render.mock.calls[0][1].course.sys.id).toBe(mockCourse.sys.id)
-    expect(response.render.mock.calls[0][1].lesson.sys.id).toBe(mockCourse.fields.lessons[0].sys.id)
-    expect(response.render.mock.calls.length).toBe(1)
-  })
+//   test('it should render single course once', async () => {
+//     request.params = {slug: 'slug', lslug: 'lessonSlug'}
+//     await getCourse(request, response)
+//     expect(response.render.mock.calls[0][0]).toBe('course')
+//     expect(response.render.mock.calls[0][1].title).toBe(mockCourse.fields.title)
+//     expect(response.render.mock.calls[0][1].course.sys.id).toBe(mockCourse.sys.id)
+//     expect(response.render.mock.calls[0][1].lesson.sys.id).toBe(mockCourse.fields.lessons[0].sys.id)
+//     expect(response.render.mock.calls.length).toBe(1)
+//   })
 //   test('it should render list of courses by categories', async () => {
 //     request.params = {slug: 'slug', lslug: 'lslug', category: 'categorySlug'}
 //     await getCoursesByCategory(request, response)

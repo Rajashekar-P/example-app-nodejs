@@ -77,17 +77,17 @@ describe('Courses', () => {
   })
 })
 
-describe('Lessons', () => {
-  test('it should render a lesson', async () => {
-    request.params = { cslug: 'courseSlug', lslug: 'lessonSlug' }
-    await getLesson(request, response)
-    expect(response.render.mock.calls[0][0]).toBe('course')
-    expect(response.render.mock.calls[0][1].title).toBe('Course title | Lesson title')
-    expect(response.render.mock.calls[0][1].course.sys.id).toBe(mockCourse.sys.id)
-    expect(response.render.mock.calls[0][1].lesson.sys.id).toBe(mockCourse.fields.lessons[0].sys.id)
-    expect(response.render.mock.calls.length).toBe(1)
-  })
-})
+// describe('Lessons', () => {
+//   test('it should render a lesson', async () => {
+//     request.params = { cslug: 'courseSlug', lslug: 'lessonSlug' }
+//     await getLesson(request, response)
+//     expect(response.render.mock.calls[0][0]).toBe('course')
+//     expect(response.render.mock.calls[0][1].title).toBe('Course title | Lesson title')
+//     expect(response.render.mock.calls[0][1].course.sys.id).toBe(mockCourse.sys.id)
+//     expect(response.render.mock.calls[0][1].lesson.sys.id).toBe(mockCourse.fields.lessons[0].sys.id)
+//     expect(response.render.mock.calls.length).toBe(1)
+//   })
+// })
 
 describe('Settings', () => {
   test('It should render settings', async () => {
